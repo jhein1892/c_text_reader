@@ -1,10 +1,8 @@
-// Implement a basic command-line application that reads data from a text file and performs operations such as word count, and character count.
-
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
 
-int main(){
+int main(void){
 
     FILE *fp;
     char buffer[1000];
@@ -17,7 +15,7 @@ int main(){
 
     if (fp == NULL){
         printf("Error opening File\n");
-        return 0;
+        return 1;
     }
 
     while (fgets(buffer, 1000, fp)){
@@ -35,10 +33,8 @@ int main(){
                 }
             }
             token = strtok(NULL, " \n\r\t");
-        }
-        
+        }   
     }
-
     fclose(fp);
 
     printf("Lines: %d\nWords: %d\nLetters/Numbers: %d\nNon-AlphaNum Characters: %d\nTotal Char: %d", lines, words, letter, non_letter, characters);
