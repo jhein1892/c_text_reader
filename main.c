@@ -6,7 +6,7 @@ int main(void){
 
     FILE *fp;
     char buffer[1000];
-    fp = fopen("test.txt", "r");
+    fp = fopen("test.txt", "r"); // Swap out this filename for txt file in this directory
     int characters = 0;
     int non_letter = 0;
     int letter = 0;
